@@ -13,6 +13,8 @@ html {
   background-color: #DE6B48;
   padding: 1rem 0;
   font-weight: bold;
+  border-top: solid 1px red;
+  border-bottom: solid 2px red;
 }
 
 .nav__container *{
