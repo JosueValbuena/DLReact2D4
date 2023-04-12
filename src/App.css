@@ -10,11 +10,11 @@ html {
 .nav__container{
   display: flex;
   justify-content: space-around;
-  background-color: #DE6B48;
+  background-color: black;
   padding: 1rem 0;
   font-weight: bold;
-  border-top: solid 1px red;
-  border-bottom: solid 2px red;
+  border-top: solid 1px gray;
+  border-bottom: solid 2px gray;
 }
 
 .nav__container *{
@@ -26,5 +26,50 @@ html {
 }
 
 .active *{
-  color:  #ff0000;
+  color:  gray;
+}
+
+.home__container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.card{
+  width: 18rem;
+  border: solid 1px gray;
+  margin: 1rem 0;
+}
+
+.card img{
+  width: 100%;
+}
+
+.card ul{
+ display: flex;
+ flex-direction: column;
+ padding-left: 1.2rem;
+}
+
+.card__price{
+  text-align: center;
+}
+
+.card__btn{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.card__detalles{
+  display: flex;
+  border: solid 2px gray;
+}
+
+.card__detalles img{     
+  width: 100%; 
+}
+
+.card__detalles__btn{
+  display: flex;
+  justify-content: space-between;
 }
