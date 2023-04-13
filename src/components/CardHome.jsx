@@ -9,6 +9,10 @@ const Card = ({ data }) => {
         navegate(`/pizza/${id}`);
     }
 
+    const addShoppingCard = () =>{
+        data.qty = data.qty+1;
+    }
+
     return (
         <>
             <img src={data.img} alt="" />
@@ -24,7 +28,7 @@ const Card = ({ data }) => {
             <h2 className='card__price'>$ {data.price}</h2>
             <div className='card__btn'>
                 <button onClick={() => handleClick(data.id)}>Ver Más</button>
-                <button>Agregar al Carro</button>
+                <button onClick={() => addShoppingCard()}>Agregar al Carro</button>
             </div>
         </>
     )

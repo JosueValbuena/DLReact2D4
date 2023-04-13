@@ -73,3 +73,22 @@ html {
   display: flex;
   justify-content: space-between;
 }
+
+.card__shoppingCard{
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 1rem;
+}
+
+.card__shoppingCard__Left{
+  display: flex;
+}
+
+.card__shoppingCard img{
+  width: 10rem;
+}
+
+.card__shoppingCard__Right{
+  display: flex;
+  align-items: center;
+}
