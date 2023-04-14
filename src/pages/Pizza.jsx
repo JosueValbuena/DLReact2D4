@@ -14,7 +14,7 @@ const Pizza = () => {
 
   return (
     <div>
-        {<CardDetalles pizza={pizza}/>}
+        {<CardDetalles key={data.id} pizza={pizza}/>}
     </div>
   )
 }

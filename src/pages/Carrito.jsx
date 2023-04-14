@@ -3,17 +3,22 @@ import MyContext from '../context/MyContext';
 
 const Carrito = () => {
 
-  const {data, setData} = useContext(MyContext);
-  
-  const addShoppingCard = (id) =>{
-    console.log(id);
+  const { data, setData } = useContext(MyContext);
 
-    /* data.qty = data.qty+1;
-    setData([...data]) */
+  const addShoppingCard = (id) => {
+    if (data.find((ele) => ele.id === id)) {
+      const productAdd = data.map((ele) =>
+        ele.id === id ? { ...ele, qty: ele.qty + 1 } : ele)
+      setData(productAdd)
+    };
   }
 
-  const removeShoppingCard = () =>{
-    data.qty = data.qty-1;
+  const removeShoppingCard = (id) => {
+    if (data.find((ele) => ele.id === id)) {
+      const productAdd = data.map((ele) =>
+        ele.id === id ? { ...ele, qty: ele.qty - 1 } : ele)
+      setData(productAdd)
+    };
   }
 
   return (
@@ -25,9 +30,9 @@ const Carrito = () => {
             <p>{ele.name}</p>
           </div>
           <div className='card__shoppingCard__Right'>
-            <button onClick={() => addShoppingCard(ele.id)}>-</button>
+            <button onClick={() => removeShoppingCard(ele.id)}>-</button>
             <p>{ele.qty}</p>
-            <button onClick={() => removeShoppingCard()}>+</button>
+            <button onClick={() => addShoppingCard(ele.id)}>+</button>
           </div>
         </div>
       )}
