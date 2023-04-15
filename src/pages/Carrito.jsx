@@ -3,7 +3,7 @@ import MyContext from '../context/MyContext';
 
 const Carrito = () => {
 
-  const { data, setData } = useContext(MyContext);
+  const { data, setData, resultado } = useContext(MyContext);
 
   const addShoppingCard = (id) => {
     if (data.find((ele) => ele.id === id)) {
@@ -21,6 +21,8 @@ const Carrito = () => {
     };
   }
 
+
+
   return (
     <div>
       {data.filter((ele) => ele.qty >= 1).map(
@@ -36,6 +38,10 @@ const Carrito = () => {
           </div>
         </div>
       )}
+      <div className='shoppingCar__total'>
+        <h3>Total:</h3>
+        <h3>{resultado}</h3>
+      </div>
     </div>
   )
 }

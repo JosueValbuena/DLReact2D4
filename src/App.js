@@ -19,10 +19,11 @@ function App() {
     getData()
   }, [])
 
+  let resultado = data.map((ele) => ele.qty * ele.price).reduce((a, b) => a + b, 0);
 
   return (
     <div className="App">
-      <MyContext.Provider value={{data, setData}}>
+      <MyContext.Provider value={{data, setData, resultado}}>
         <Nav />
         <Routers />
       </MyContext.Provider>

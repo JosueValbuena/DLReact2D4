@@ -1,7 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
+import MyContext from '../context/MyContext';
 
 const Nav = () => {
+
+    const {resultado} = useContext(MyContext)
 
     const active = ({ isActive }) => isActive ? "active" : {};
 
@@ -12,7 +15,8 @@ const Nav = () => {
                 <p>Pizzería Mamma Mia!</p></NavLink></div>
             <div><NavLink className={active} to="/carrito">
                 <i className="fa-solid fa-cart-shopping"></i>
-                <p>Carrito</p>
+                <p>Carrito: $</p>
+                {resultado}
             </NavLink></div>
         </div>
     )
